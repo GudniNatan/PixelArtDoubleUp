@@ -1,9 +1,16 @@
-import pygame
-import os
+import os, sys
 
-pygame.init()
-window_size = window_width, window_height = 1280, 720
-screen = pygame.display.set_mode(window_size)
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+ 
+ 
+import pygame.transform
+ 
+ 
+if 1:
+    #some platforms might need to init the display for some parts of pygame.
+    import pygame.display
+    pygame.display.init()
+    screen = pygame.display.set_mode((1,1))
 
 filename = "" #No dots allowed in filename except for extension
 
